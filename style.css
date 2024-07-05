@@ -5,10 +5,15 @@
   --text-on-brand: #F5F5F5;
   --text-on-positive: #311B92;
   --background-primary: #FFF;
+  --background-primary-hover: #F5F5F5;
   --background-secondary: #F5F5F5;
+  --background-secondary-hover: #E6E6E6;
   --background-tertiary: #E3E3E3;
+  --background-tertiary-hover: #CDCDCD;
   --background-brand: #673AB7;
+  --background-brand-hover: #512DA8;
   --background-positive: #EDE7F6;
+  --background-positive-hover: #D1C4E9;
   --icon-primary: #1E1E1E;
   --icon-secondary: #757575;
   --border: 1px solid #D9D9D9;
@@ -86,6 +91,10 @@ form input[type="text"], form input[type="number"] {
   line-height: 1;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .button--medium {
   padding: 12px;
 }
@@ -104,9 +113,17 @@ form input[type="text"], form input[type="number"] {
   color: var(--text-on-brand);
 }
 
+.button--brand:hover {
+  background-color: var(--background-brand-hover);
+}
+
 .button--secondary {
   background: var(--background-tertiary);
   color: var(--text-primary);
+}
+
+.button--secondary:hover {
+  background: var(--background-secondary-hover);
 }
 
 .button--positive {
@@ -114,9 +131,17 @@ form input[type="text"], form input[type="number"] {
   color: var(--text-on-positive);
 }
 
+.button--positive:hover{
+  background: var(--background-positive-hover);
+}
+
 .button--subtle {
   background: none;
   color: var(--text-primary);
+}
+
+.button--subtle:hover {
+  background: var(--background-primary-hover);
 }
 
 .icon-button {
@@ -127,6 +152,11 @@ form input[type="text"], form input[type="number"] {
   background: var(--background-secondary);
   color: var(--icon-primary);
   padding: 8px;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+  background: var(--background-secondary-hover);
 }
 
 .button-group {
