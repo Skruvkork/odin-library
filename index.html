@@ -20,33 +20,29 @@
     </header>
     <ul id="books" class="book-list"></ul>
     <dialog id="new-book-dialog">
-      <form id="book-form">
+      <form id="book-form" class="book-form">
         <p>
-          <label>
-            Title
-            <input name="title" />
-          </label>
+          <label for="title">Title</label>
+          <input id="title" type="text" name="title" />
+        </p>
+        <p>
+          <label for="author">Author</label>
+          <input id="author" type="text" name="author"  />
+        </p>
+        <p>
+          <label for="pages">Pages</label>
+          <input id="pages" type="number" min="1" name="pages" />
         </p>
         <p>
           <label>
-            Author
-            <input name="author" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Pages
-            <input type="number" min="1" name="pages" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Read
             <input type="checkbox" name="read" />
+            I have read this book
           </label>
         </p>
-        <button value="cancel" type="button" formmethod="dialog">Cancel</button>
-        <input type="submit" value="Confirm" />
+        <div class="button-group">
+          <button value="cancel" formmethod="dialog" class="button button--medium button--subtle">Cancel</button>
+          <input type="submit" value="Save" class="button button--medium button--brand" />
+        </div>
       </form>
     </dialog>
 
