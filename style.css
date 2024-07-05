@@ -1,3 +1,146 @@
-.capitalize {
-  text-transform: capitalize;
+:root {
+  --text-primary: #1E1E1E;
+  --text-secondary: #757575;
+  --text-on-brand: #F5F5F5;
+  --text-on-positive: #311B92;
+  --background-primary: #FFF;
+  --background-secondary: #F5F5F5;
+  --background-tertiary: #E3E3E3;
+  --background-brand: #673AB7;
+  --background-positive: #EDE7F6;
+  --icon-primary: #1E1E1E;
+  --icon-secondary: #757575;
+  --border: 1px solid #D9D9D9;
+}
+
+body {
+  font-family: "Hind Madurai", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-primary);
+  background-color: var(--background-secondary);
+  margin: 0 48px;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: var(--text-secondary);
+}
+
+.wrapper {
+  max-width: 1008px;
+  margin: 48px auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.text--secondary {
+  color: var(--text-secondary);
+}
+
+.button {
+  font-family: "Hind Madurai", sans-serif;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.button--medium {
+  padding: 12px;
+}
+
+.button--small {
+  padding: 8px;
+}
+
+.button--full-width {
+  display: block;
+  width: 100%;
+}
+
+.button--brand {
+  background-color: var(--background-brand);
+  color: var(--text-on-brand);
+}
+
+.button--secondary {
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+.button--positive {
+  background: var(--background-positive);
+  color: var(--text-on-positive);
+}
+
+.icon-button {
+  border-radius: 32px;
+  border: var(--border);
+  font-size: 30px;
+  line-height: 18px;
+  background: var(--background-secondary);
+  color: var(--icon-primary);
+  padding: 8px;
+}
+
+.book-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  position: relative;
+  border-radius: 4px;
+  background-color: var(--background-primary);
+}
+
+.book-card__image-placeholder {
+  background-color: rgba(0,0,0, 0.12);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.50) 50.52%, rgba(255, 255, 255, 0.00) 100%);
+  height: 360px;
+}
+
+.book-card__description {
+  margin: 16px;
+}
+
+.book-card__description > p {
+  line-height: 1.2;
+  margin: 8px 0;
+}
+
+.book-card .icon-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.book-card .icon-button:after {
+  content: '\00D7';
+}
+
+.book-card .button--full-width {
+  margin-top: 16px;
+}
+
+.book-card .button--positive:before {
+  content: '\2714';
+  margin-right: 4px;
 }

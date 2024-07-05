@@ -32,44 +32,46 @@ function displayBooks() {
 
 function createBookListItem(book, i) {
   const li = document.createElement('li');
-  const dl = document.createElement('dl');
+  li.className = 'book-card';
 
-  Object.entries(book).forEach((entry) => {
-    if (entry[0] === 'title') {
-      li.innerText = entry[1];
-      return;
-    }
+  const cover = document.createElement('div');
+  cover.className = 'book-card__image-placeholder';
+  li.appendChild(cover);
 
-    const dt = document.createElement('dt');
-    dt.className = 'capitalize';
-    dt.innerText = `${entry[0]}:`;
+  const description = document.createElement('div');
+  description.className = 'book-card__description';
+  li.appendChild(description);
 
-    const dd = document.createElement('dd');
-    let text = entry[1];
-    if (entry[0] === 'read') {
-      text = entry[1] ? 'Yes' : 'No';
-    }
-    dd.innerText = text;
-
-    dl.appendChild(dt);
-    dl.appendChild(dd);
-  });
-  li.appendChild(dl);
+  [
+    createParagraph(book.title),
+    createParagraph(`by ${book.author}`),
+    createParagraph(`${book.pages} pages`, 'text--secondary'),
+  ].forEach(p => description.appendChild(p));
 
   const readButton = document.createElement('button');
-  readButton.innerText = book.read ? 'Mark as unread' : 'Mark as read';
+  readButton.className = 'button button--small button--full-width';
+  readButton.classList.add(book.read ? 'button--positive' : 'button--secondary');
+  readButton.textContent = book.read ? 'Read' : 'Mark as read';
   readButton.addEventListener('click', () => {
     book.toggleRead();
     displayBooks();
   });
-  li.appendChild(readButton);
+  description.appendChild(readButton);
 
   const removeButton = document.createElement('button');
-  removeButton.innerText = 'Remove';
+  removeButton.className = 'icon-button';
   removeButton.addEventListener('click', () => removeBook(i));
   li.appendChild(removeButton);
 
   return li;
+}
+
+function createParagraph(text, className) {
+  const p = document.createElement('p');
+  p.textContent = text;
+  if (className) p.className = className;
+
+  return p;
 }
 
 function removeBook(bookIndex) {
